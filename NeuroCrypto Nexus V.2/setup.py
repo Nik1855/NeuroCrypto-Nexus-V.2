@@ -1,0 +1,41 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="neurocrypto_nexus_v2",
+    version="4.2.0",
+    packages=find_packages(),
+    install_requires=[
+        "torch==2.3.0",
+        "torchvision==0.18.0",
+        "torchaudio==2.3.0",
+        "torch-geometric==2.6.1",
+        "pandas==2.2.2",
+        "numpy==1.26.4",
+        "ta==0.11.0",
+        "python-telegram-bot==21.2",
+        "transformers==4.40.0",
+        "textblob==0.17.1",
+        "aiohttp==3.9.5",
+        "tqdm==4.66.4",
+        "requests==2.32.4",
+        "pyparsing==3.2.3",
+        "psutil==5.9.8",
+        "fsspec==2024.6.1",
+        "jinja2==3.1.4",
+        "networkx==3.3",
+        "pillow==11.0.0",
+        "scipy==1.16.0",
+        "shap==0.46.1",
+        "streamlit==1.35.0",
+        "qiskit==0.46.0",
+        "qiskit-machine-learning==0.7.1",
+        "cryptography==42.0.5",
+        "boto3==1.34.38",
+        "google-cloud-storage==2.14.0"
+    ],
+    entry_points={
+        'console_scripts': [
+            'neurocrypto=main:main',
+        ],
+    },
+)

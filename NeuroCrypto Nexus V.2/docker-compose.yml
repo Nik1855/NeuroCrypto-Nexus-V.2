@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  neurocrypto:
+    build: .
+    container_name: neurocrypto_nexus
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    volumes:
+      - ./data:/app/data
+      - ./saved_models:/app/saved_models
+    ports:
+      - "8501:8501"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: ["python", "main.py"]
